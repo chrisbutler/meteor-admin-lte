@@ -1,0 +1,26 @@
+<template name="mfAdminLayout">
+  {{#AdminLTE
+    skin=AdminLTE_skin
+    fixed=AdminLTE_fixed
+    sidebarMini=AdminLTE_sidebarMini}}
+    {{> mfAdminHeader}}
+    {{> mfAdminSidebar}}
+    <div class="content-wrapper">
+      <div class="content-header">
+        {{> Template.dynamic template=contentHeader}}
+      </div>
+      <div class="content" style="min-height: {{minHeight}}">
+        {{> Template.dynamic template=content data=contentData}}
+      </div>
+    </div>
+  {{/AdminLTE}}
+  {{> mfAdminCollectionsDeleteModal}}
+</template>
+
+<template name="mfAdminContentHeader">
+  <h1>
+    {{title}}
+    <small>{{subtitle}}</small>
+  </h1>
+  {{> mfAdminBreadcrumb}}
+</template>
