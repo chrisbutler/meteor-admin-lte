@@ -1,6 +1,6 @@
 Package.describe({
   name: 'chrisbutler:admin-lte',
-  version: '1.0.0',
+  version: '2.3.8',
   summary: 'AdminLTE dashboard theme',
   git: 'https://github.com/chrisbutler/meteor-admin-lte.git',
   documentation: 'README.md'
@@ -14,7 +14,9 @@ Package.onUse(function(api) {
     'tracker',
     'underscore',
     'reactive-var',
-    'twbs:bootstrap@3.3.6'
+    'reactive-dict',
+    'twbs:bootstrap',
+    'fortawesome:fontawesome'
   ], 'client');
 
   api.addFiles([
@@ -22,7 +24,7 @@ Package.onUse(function(api) {
     'admin-lte.js'
   ], 'client');
 
-  api.addFiles([
+  api.addAssets([
     'css/AdminLTE.min.css',
     'css/skins/skin-black-light.min.css',
     'css/skins/skin-black.min.css',
@@ -36,7 +38,7 @@ Package.onUse(function(api) {
     'css/skins/skin-red.min.css',
     'css/skins/skin-yellow-light.min.css',
     'css/skins/skin-yellow.min.css'
-  ], 'client', { isAsset: true });
+  ], 'client');
 
   api.addFiles([
     'client/common/admin.js',

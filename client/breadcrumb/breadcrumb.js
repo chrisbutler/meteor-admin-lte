@@ -1,10 +1,8 @@
 Template.mfAdminBreadcrumb.helpers({
   breadcrumb: function () {
-    return _.map(this.breadcrumb, function (item, index, arr) {
+    return _.map(Admin.breadcrumbs(), function (item, index, arr) {
       var isActive = index === (arr.length - 1);
-      return _.extend({},
-                item,
-                isActive ? { isActive: isActive, path: null, url: null } : {});
+      return _.extend({}, item, isActive ? { isActive: isActive, path: null, url: null } : {});
     });
   },
 

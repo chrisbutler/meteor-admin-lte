@@ -10,11 +10,11 @@
         {{> Template.dynamic template=contentHeader}}
       </div>
       <div class="content" style="min-height: {{minHeight}}">
-        {{> Template.dynamic template=content data=contentData}}
+        <!-- {{> Template.dynamic template=content data=contentData}} -->
+        {{> yield}}
       </div>
     </div>
   {{/AdminLTE}}
-  {{> mfAdminCollectionsDeleteModal}}
 </template>
 
 <template name="mfAdminContentHeader">

@@ -1,7 +1,12 @@
 <template name="mfAdminHeader">
   <header class="main-header">
     <a href="{{Admin.path}}" class="logo">
-      {{{Admin.config.get 'name'}}}
+      <span class="logo-lg">
+        {{{Admin.config.get 'name'}}}
+      </span>
+      <span class="logo-mini">
+        {{{Admin.config.get 'name-mini'}}}
+      </span>
     </a>
     {{> mfAdminNavbar}}
   </header>

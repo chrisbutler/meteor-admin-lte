@@ -23,9 +23,11 @@ Template.AdminLTE.onCreated(function () {
 
   fixed && $('body').addClass('fixed');
   sidebarMini && $('body').addClass('sidebar-mini');
+  $('body').addClass('skin-'+skin);
   self.removeClasses = function () {
     fixed && $('body').removeClass('fixed');
     sidebarMini && $('body').removeClass('sidebar-mini');
+    $('body').removeClass('skin-'+skin);
   }
 
   this.autorun(function () {
@@ -121,12 +123,11 @@ Template.AdminLTE.events({
 });
 
 function cssUrl () {
-  return Meteor.absoluteUrl('packages/mfactory_admin-lte/css/AdminLTE.min.css');
+  return '/packages/chrisbutler_admin-lte/css/AdminLTE.min.css';
 }
 
 function skinUrl (name) {
-  return Meteor.absoluteUrl(
-    'packages/mfactory_admin-lte/css/skins/skin-' + name + '.min.css');
+  return '/packages/chrisbutler_admin-lte/css/skins/skin-' + name + '.min.css';
 }
 
 function waitOnCSS (url, timeout) {
@@ -174,8 +175,8 @@ function waitOnCSS (url, timeout) {
     ready: function () {
       return isLoaded.get();
     },
-
     remove: function () {
+      console.log('remove css', url);
       $('link[href="' + url + '"]').remove();
     }
   };

@@ -35,8 +35,13 @@ Template.mfAdminLayout.helpers({
   },
 
   contentData: function () {
-    var routeOptions = Admin._currentRouteOptions();
-    return routeOptions && routeOptions.data &&
-      routeOptions.data(Admin._routeParams());
+    // var routeOptions = Admin._currentRouteOptions();
+    // return routeOptions && routeOptions.data &&
+    //   routeOptions.data(Admin._routeParams());
+    console.log('contentData', this);
+    return Router.current().data && Router.current().data();
+  },
+  contentHeader: function () {
+    return this.contentHeader || 'mfAdminContentHeader';
   }
 });

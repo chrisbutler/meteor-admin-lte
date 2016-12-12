@@ -1,7 +1,7 @@
 AdminLTE dashboard theme
 ========================
 
-`meteor add mfactory:admin-lte`
+`meteor add chrisbutler:admin-lte`
 
 ## Usage ##
 
